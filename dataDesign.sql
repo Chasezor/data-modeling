@@ -10,6 +10,16 @@ user_id SERIAL PRIMARY KEY
 );
 
 
+CREATE TABLE ingredients
+(
+ingredients_id  SERIAL PRIMARY KEY,
+protein VARCHAR(500),
+carbohydrates VARCHAR(500),
+spices VARCHAR(500),
+veggies VARCHAR(500)
+);
+
+
 CREATE TABLE recipe
 (
 user_id INTEGER NOT NULL REFERENCES users(user_id),
@@ -20,19 +30,11 @@ public_or_private BOOLEAN,
 ingredient_id INTEGER NOT NULL REFERENCES ingredients(ingredients_id)
 );
 
-CREATE TABLE ingredients
-(
-ingredients_id  SERIAL PRIMARY KEY,
-protein VARCHAR(500),
-carbohydrates VARCHAR(500),
-spices VARCHAR(500),
-veggies VARCHAR(500)
-);
 
 CREATE TABLE occasions
 (
-recipe_name VARCHAR NOT NULL REFERENCES recipe(recipe_name),
-user_name VARCHAR NOT NULL REFERENCES users(user_name),
+recipe_id  INTEGER NOT NULL REFERENCES recipe(recipe_id),
+user_id INTEGER NOT NULL REFERENCES users(user_id),
 Occasion VARCHAR(500),
 time_of_event TIMESTAMP
 );
