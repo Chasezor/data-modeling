@@ -1,0 +1,36 @@
+users can sign into the app with their email and password
+users can create recipes with ingredients and instructions
+recipes can be marked as public or private
+users can view other people’s recipes
+ingredients from recipes can be added to user’s grocery lists
+users can create their own occasions and assign recipes to occasions
+
+Users data table
+chefs name VARCHAR(100)
+Email VARCHAR(50)
+Password VARCHAR(500)
+PhoneNumber NUMERIC
+Experience (years) 
+Awards VARCHAR(500)
+user_id (Primary Key)
+
+Recipe data table
+	Reference to user_id
+	recipe id SERIAL PRIMARY KEY
+	recipe_nameVARCHAR(100)
+instructions text
+public_or_private (boolean)
+Reference to ingredient_id
+
+Ingredients data table
+	Ingredients_id  SERIAL PRIMARY KEY
+Protein VARCHAR()
+Carbohydrates VARCHAR()
+Spices VARCHAR()
+Veggies VARCHAR()
+
+Occasions data table
+	Menu Reference to recipe_name
+	Menu Reference to chef_name
+	Occasion VARCHAR(500)
+
